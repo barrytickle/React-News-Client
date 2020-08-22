@@ -6,10 +6,14 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-      <div className="container">
-          {/*<Header/>*/}
-          <App />
-      </div>
+          <div className="row">
+              <div className="col-xs-12 col-md-4">
+
+              </div>
+              <div className="col-xs-12 col-md-8">
+                  <App />
+              </div>
+          </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
