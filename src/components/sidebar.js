@@ -3,12 +3,11 @@ import {Navigation} from './nav';
 import {AuthContext} from "../context/auth";
 
 
-export const Sidebar = () => {
-    const user = useContext(AuthContext);
 
+export const Sidebar = () => {
     return(
         <aside className="navigation-sidebar">
-            <Navigation/>
+                <Navigation/>
         </aside>
     )
 }
