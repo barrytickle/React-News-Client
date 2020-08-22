@@ -1,9 +1,78 @@
 aside{
   .sideNavigation{
+    padding:30px;
+
+    .profileBanner{
+      height:150px;
+      margin-bottom:50px;
+
+      .profileImage{
+          height:80px;
+          width:80px;
+          background-size:cover;
+          border-radius: 50%;
+      }
+
+      p{
+        margin:0;
+      }
+      .username{
+        margin:0;
+        color:$purple;
+        font-weight:bold;
+      }
+    }
+
     a{
+      text-decoration: none;
+      font-size:25px;
+      position: relative;
+      margin-bottom:60px;
       .iconContainer{
-        background:#fefefe;
+        background:$grey;
         padding:10px;
+        @include display(inline-flex);
+        @include justify-content(center);
+        @include align-items(center);
+        height:50px;
+        width:50px;
+        border-radius: 15px;
+        margin-right:20px;
+        transition:0.2s ease-in-out;
+        i{
+          font-size:inherit;
+        }
+      }
+      span{
+        font-weight:600;
+        color:$black;
+      }
+
+      &:after{
+        content:'';
+        display:block;
+        height:10px;
+        width:10px;
+        background:$purple;
+        position: absolute;
+        top:50%;
+        right:0;
+        transform: translate(-50%, -50%);
+        border-radius:50%;
+        opacity:0;
+        transition: 0.2s ease-in-out;
+      }
+
+      &:hover, &.active{
+        &:after{
+          opacity:1;
+        }
+        .iconContainer{
+          background:$purple;
+          i{
+            color:$white;
+          }
+        }
       }
     }
   }

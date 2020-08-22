@@ -10,12 +10,12 @@ import {AuthProvider} from './context/auth';
 ReactDOM.render(
   <React.StrictMode>
           <div className="row">
-              <div className="col-xs-12 col-md-4">
+              <div className="col-xs-12 col-md-3 col-lg-2">
                   <AuthProvider>
                     <Sidebar/>
                   </AuthProvider>
               </div>
-              <div className="col-xs-12 col-md-8">
+              <div className="col-xs-12 col-md-9 col-lg-10">
                   <App />
               </div>
           </div>

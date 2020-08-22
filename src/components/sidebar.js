@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
-import {Navigation} from './nav';
-import {AuthContext} from "../context/auth";
+import Navigation from './nav';
+// import {AuthContext} from "../context/auth";
 
 
 
