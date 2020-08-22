@@ -33,23 +33,18 @@ import Cookie from '../secure/cookie';
         const params = `?username=${body.username}&password=${body.password}`;
         const data =  await gateway.send(url, params, postOptions);
 
-        const C = new Cookie();
+        console.log(data);
 
-        if(!data.includes('Error')) {
+        const cookie = new Cookie();
 
-            if (!C.check('auth')) {
-                C.set('auth',JSON.stringify(data), '30');
-                console.log(C.get('auth'));
+        if(!data.includes('Error')){
+            if(!cookie.check('auth')){
+                cookie.set('auth', data, '30');
             }
-
-            this.setState({
-                message:'Login successful'
-            })
         }else{
-            this.setState({
-                message: 'Error, username or password is wrong'
-            })
+            this.setState({message: 'Error, username or password is not correct'});
         }
+
     }
 
      render(){

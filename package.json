@@ -22,7 +22,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "readable-stream": "^3.6.0"
+    "readable-stream": "^3.6.0",
+    "styled-icons": "^10.17.0"
   },
   "scripts": {
     "start": "react-scripts start",
