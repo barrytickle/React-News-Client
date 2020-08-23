@@ -2,14 +2,13 @@ import React from 'react';
 import './App.css';
 import {Sidebar} from "./components/sidebar";
 import Routes from './routes';
-import getTimezone from "./secure/getTimezone";
-
+import GetTimezone from "./secure/getTimezone";
 
 class App extends React.Component {
     render(){
         return(
             <div className="row">
-                <getTimezone/>
+                <GetTimezone/>
                 <div className="col-xs-12 col-md-3 col-lg-2">
                     <Sidebar/>
                 </div>

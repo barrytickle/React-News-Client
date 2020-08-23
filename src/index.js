@@ -4,10 +4,15 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 import { LocationDataProvider } from "./context/location";
-
+import {RedirectProvider} from "./context/login";
 
 ReactDOM.render(
- <LocationDataProvider> <App/> </LocationDataProvider>,document.getElementById('root')
+ <LocationDataProvider>
+     <RedirectProvider>
+             <App/>
+     </RedirectProvider>
+ </LocationDataProvider>
+      ,document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

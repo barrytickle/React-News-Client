@@ -3,6 +3,8 @@ import 'remixicon/fonts/remixicon.css';
 import Cookie from '../secure/cookie';
 import Clock from 'react-live-clock';
 import {LocationDataConsumer} from '../context/location';
+import {RedirectConsumer} from "../context/login";
+
 
 export default class Navigation extends React.Component{
     constructor(props){
@@ -10,22 +12,35 @@ export default class Navigation extends React.Component{
     }
 
     bannerProfile(banner){
-        if(typeof banner == 'object'){
             return (
-                <div className="row">
-                    <div className="col-xs-12 col-md-5">
-                        <div className="profileImage" style={{backgroundImage:`url(images/users/${banner.image}`}}/>
+                <RedirectConsumer>
+                    {context => {
+                        console.log(context);
+                        if(context.getAuth === ''){
+                            return <p>Please login to continue</p>
+                        }else{
+                            let banner = JSON.parse(context.getAuth);
+                            banner = banner[0];
+                            // console.log(banner);
+                            return (
+                                <div className="row">
+                                    <div className="col-xs-12 col-md-5">
+                                        <div className="profileImage"
+                                             style={{backgroundImage: `url(images/users/${banner.image}`}}/>
 
-                    </div>
-                    <div className="col-xs-12 col-md-5 middle-md">
-                        <p>{banner.fullname}</p>
-                        <p className="username">{banner.username}</p>
-                    </div>
-                </div>
+                                    </div>
+                                    <div className="col-xs-12 col-md-5 middle-md">
+                                        <p>{banner.fullname}</p>
+                                        <p className="username">{banner.username}</p>
+                                    </div>
+                                </div>
+                            )
+                        }
+
+                    }}
+                </RedirectConsumer>
+
             )
-        }else{
-            return <p>Please login to continue</p>;
-        }
     }
 
     profileBanner(){
@@ -56,15 +71,22 @@ export default class Navigation extends React.Component{
             <div>
 
                 <nav className="sideNavigation">
-                    <LocationDataConsumer>
-                        {context => (
-                            <Clock format={'HH:mm'} ticking={true} timezone={context.tz}/>
-                        )}
-                    </LocationDataConsumer>
-
                     <div className="profileBanner">
                         {BannerProfile}
+                        <LocationDataConsumer>
+                            {context => (
+                                <Clock style={{marginTop:"30px", display:"block", fontSize:"24px", fontWeight:"bold"}} format={'HH:mm'} ticking={true} timezone={context.tz}/>
+
+                            )}
+                        </LocationDataConsumer>
+                        <LocationDataConsumer>
+                            {context => (
+                                <Clock style={{display:"block", fontSize:"24px", opacity:"0.3",fontWeight:"bold", marginTop:"-10px"}} format={'dddd Do MMMM'} ticking={true} timezone={context.tz}/>
+
+                            )}
+                        </LocationDataConsumer>
                     </div>
+
                     <a href="/" className="row middle-xs active">
                         <div className="iconContainer">
                             <i className="ri-home-line"/>

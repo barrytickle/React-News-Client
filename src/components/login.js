@@ -1,6 +1,8 @@
 import React, {useContext} from "react";
 import Gateway from '../secure/gateway';
 import Cookie from '../secure/cookie';
+import {RedirectConsumer} from "../context/login";
+
 
  class Login extends React.Component{
      constructor() {
@@ -8,7 +10,9 @@ import Cookie from '../secure/cookie';
         this.state = {
             username:'',
             password:'',
-            message:''
+            message:'',
+            success:false,
+            auth: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.auth = this.auth.bind(this);
@@ -30,27 +34,30 @@ import Cookie from '../secure/cookie';
         const url = 'http://localhost:9000/news/auth';
         const params = `?username=${body.username}&password=${body.password}`;
         const data =  await gateway.send(url, params, postOptions);
-
         const cookie = new Cookie();
 
         if(!data.includes('Error')){
-            if(!cookie.check('auth')){
-                cookie.set('auth', data, '30');
-            }
-
+            this.setState({success: true, auth:data});
         }else{
             this.setState({message: 'Error, username or password is not correct'});
         }
     }
-
      render(){
+         console.log(this.state);
         return(
             <form onSubmit={this.auth} action="#" >
                 <input type="text" name="username" onChange={(e) => this.handleChange(e)}/>
                 <input type="text" name="password" onChange={(e) => this.handleChange(e)}/>
                 <input type="submit"/>
-                {this.state.message}
-
+                <RedirectConsumer>
+                    {context => {
+                        if(this.state.success){
+                            context.addDetails('/', this.state.auth);
+                            console.log(context);
+                        }
+                    }}
+                </RedirectConsumer>
+                {/*{this.state.success ?  : this.state.message}*/}
             </form>
         )
     }
