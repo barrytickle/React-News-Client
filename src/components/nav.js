@@ -16,6 +16,7 @@ export default class Navigation extends React.Component{
                 <RedirectConsumer>
                     {context => {
                         console.log(context);
+                        const cookie = new Cookie();
                         if(context.getAuth === ''){
                             return <p>Please login to continue</p>
                         }else{

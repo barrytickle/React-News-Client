@@ -1,13 +1,29 @@
 import React, {Component} from 'react';
+import Cookie from "../secure/cookie";
+
+
 const {Provider, Consumer}  = React.createContext();
 
 class RedirectProvider extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            redirect:null,
-            auth:''
-        };
+        const cookie = new Cookie();
+        // if()
+        console.log('Auth check');
+
+        if(cookie.get('auth')){
+            this.state = {
+                redirect: '/',
+                auth:cookie.get('auth')
+            }
+        }else{
+            this.state = {
+                redirect:null,
+                auth:''
+            };
+        }
+
+
     }
 
     setRedirect = (redirect) => {

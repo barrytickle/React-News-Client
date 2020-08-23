@@ -38,7 +38,6 @@ class Routes extends React.Component{
                                         auth: JSON.parse(context.getAuth)
                                     })
                                     return (
-                                        // console.log(this.state.auth)
                                         <Redirect to={this.state.redirect}/>
                                     )
                                 }
@@ -53,6 +52,8 @@ class Routes extends React.Component{
                                     auth:''
                                 });
                                 context.addDetails('/','');
+                                const cookie = new Cookie();
+                                cookie.delete('auth');
 
                                 return (
                                     <Redirect to={this.state.redirect}/>

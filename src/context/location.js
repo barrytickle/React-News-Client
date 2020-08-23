@@ -46,7 +46,6 @@ class LocationDataProvider extends Component{
             sent:true
         });
 
-        console.log(this.state);
     }
 
      render(){

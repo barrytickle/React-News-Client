@@ -38,6 +38,7 @@ import {RedirectConsumer} from "../context/login";
 
         if(!data.includes('Error')){
             this.setState({success: true, auth:data});
+            cookie.set('auth', data, 30);
         }else{
             this.setState({message: 'Error, username or password is not correct'});
         }

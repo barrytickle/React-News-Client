@@ -9,7 +9,7 @@ import {RedirectProvider} from "./context/login";
 ReactDOM.render(
  <LocationDataProvider>
      <RedirectProvider>
-             <App/>
+           <App/>
      </RedirectProvider>
  </LocationDataProvider>
       ,document.getElementById('root')
