@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mapbox/timespace": "^2.0.4",
     "@styled-icons/remix-line": "^10.15.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -22,6 +23,7 @@
     "gulp-watch": "^5.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-live-clock": "^4.0.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "readable-stream": "^3.6.0",

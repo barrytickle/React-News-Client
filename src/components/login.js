@@ -33,17 +33,17 @@ import Cookie from '../secure/cookie';
         const params = `?username=${body.username}&password=${body.password}`;
         const data =  await gateway.send(url, params, postOptions);
 
-        console.log(data);
-
         const cookie = new Cookie();
 
         if(!data.includes('Error')){
             if(!cookie.check('auth')){
                 cookie.set('auth', data, '30');
             }
+
         }else{
             this.setState({message: 'Error, username or password is not correct'});
         }
+
 
     }
 
