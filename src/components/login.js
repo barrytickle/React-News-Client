@@ -1,10 +1,8 @@
 import React, {useContext} from "react";
-import {AuthContext, AuthProvider} from '../context/auth';
 import Gateway from '../secure/gateway';
 import Cookie from '../secure/cookie';
 
  class Login extends React.Component{
-     static contextType = AuthContext;
      constructor() {
         super();
         this.state = {
@@ -43,8 +41,6 @@ import Cookie from '../secure/cookie';
         }else{
             this.setState({message: 'Error, username or password is not correct'});
         }
-
-
     }
 
      render(){

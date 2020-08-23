@@ -3,24 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
-import {Sidebar} from './components/sidebar';
-import {AuthProvider} from './context/auth';
+import { LocationDataProvider } from "./context/location";
 
 
 ReactDOM.render(
-  <React.StrictMode>
-          <div className="row">
-              <div className="col-xs-12 col-md-3 col-lg-2">
-                  <AuthProvider>
-                    <Sidebar/>
-                  </AuthProvider>
-              </div>
-              <div className="col-xs-12 col-md-9 col-lg-10">
-                  <App />
-              </div>
-          </div>
-  </React.StrictMode>,
-  document.getElementById('root')
+ <LocationDataProvider> <App/> </LocationDataProvider>,document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
