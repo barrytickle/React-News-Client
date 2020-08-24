@@ -1,83 +1,31 @@
-$color: #974fe4;
-$color-dark: darken(desaturate($color, 10), 5);
-$font-size: 30px;
-$icon-size: 30px;
-$width-input: 500px;
-$border-radius: 10px;
-$transition: all 0.5s;
-
-#search
-{
-  align-items: center;
-  background: $color-dark;
-  border-radius: $border-radius;
-  display: flex;
-  justify-content: space-between;
-  margin: 0.5em 0;
-  padding: 0.5em 0.5em 0.5em 1em;
-  transition: $transition;
-  width: $width-input;
-
-  &:hover,
-  &:focus{
-    background: darken($color-dark, 2);
+.searchBox{
+  width:60%;
+  display:flex;
+  input, button{
+    border:0;
+    height:80px;
   }
-
-
-  button,input{
-    appearance: none;
-    background: transparent;
-    border: 0;
-    color: inherit;
-    font: inherit;
-    outline: 0;
+  input{
+    width:80%;
+    background:$grey;
+    font-family:$primaryFont;
+    padding:10px;
+    font-size:18px;
+    padding-right:20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius:10px;
   }
-
-
   button{
-    cursor: pointer;
-    padding: 0 0.25em;
-  }
-
-
-   input {
-     flex: 1;
-
-     &::placeholder {
-       color: #fff;
-     }
-
-   }
-
-  .spinner {
-    animation: spinner 1s infinite linear;
-    display: none;
-    padding: 0 0.25em;
-  }
-
-  .loading
-  button
-  {
-    display: none
-
-    .spinner{
-      display: block
+    width:15%;
+    background:$purple;
+    border-radius: 10px;
+    margin-left:-10px;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    i{
+      color:$white;
+      font-size:20px;
     }
-
   }
-
-}
-
-
-
-
-// Animation
-
-@keyframes spinner{
-  0% {
-    transform: rotate(0deg)
-  }
-
-  100%{transform: rotate(360deg)}
-
 }

@@ -13,11 +13,6 @@ body,html{
 }
 
 .siteContainer{
-  background:$white;
-  border-radius: $containerRadius;
-  box-shadow:$boxShadow;
-  min-height:100vh;
-  overflow:hidden;
   @media #{$laptop}{
     width: 80%;
     margin: 5vh auto 0 auto;

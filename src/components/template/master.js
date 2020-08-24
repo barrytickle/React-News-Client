@@ -1,14 +1,15 @@
 import React from "react";
 import {RedirectConsumer} from "../../context/login";
+import SearchBox from '../searchBox';
 
 export default class Master extends React.Component{
     render(){
         return (
-            <div className="container">
+            <main>
                 <div className="row">
                     <div className="col-xs-12">
                         <div className="row  middle-xs between-xs" style={{height:150}}>
-                            <div className="col-xs-12 col-md-5">
+                            <div className="col-xs-12 col-md-6">
                                 <RedirectConsumer>
                                     {context =>
                                     {
@@ -24,11 +25,10 @@ export default class Master extends React.Component{
                                     }
                                 </RedirectConsumer>
                             </div>
-                            <div className="col-xs-12 col-md-5">
+                            <div className="col-xs-12 col-md-6">
                                 {/*Add Search Bar here */}
-                                <div className="searchBox">
-                                    <input type="text"/>
-
+                                <div class="row end-md">
+                                    <SearchBox/>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@ export default class Master extends React.Component{
                         {this.props.children}
                     </div>
                 </div>
-            </div>
+            </main>
         )
     }
 }
