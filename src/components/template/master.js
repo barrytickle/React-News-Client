@@ -26,7 +26,6 @@ export default class Master extends React.Component{
                                 </RedirectConsumer>
                             </div>
                             <div className="col-xs-12 col-md-6">
-                                {/*Add Search Bar here */}
                                 <div class="row end-md">
                                     <SearchBox/>
                                 </div>

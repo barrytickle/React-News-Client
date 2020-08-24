@@ -8,14 +8,15 @@
 
 body,html{
   margin: 0;
-  padding:0.5rem;
   overflow-y:hidden;
 }
 
 .siteContainer{
-  @media #{$laptop}{
-    width: 80%;
-    margin: 5vh auto 0 auto;
+  margin: 0 auto;
+  max-width:90%;
+  @media #{$desktop}{
+    max-width:80%;
+
   }
 }
 

@@ -23,15 +23,10 @@ export default class Navigation extends React.Component{
                             banner = banner[0];
                             return (
                                 <div className="row middle-md">
-                                    <div className="col-xs-12 col-md-5">
                                         <div className="profileImage"
                                              style={{backgroundImage: `url(images/users/${banner.image}`}}/>
-
-                                    </div>
-                                    <div className="col-xs-12 col-md-5 middle-md">
-                                        <p>{banner.fullname}</p>
+                                        {/*<p>{banner.fullname}</p>*/}
                                         <p className="username">{banner.username}</p>
-                                    </div>
                                 </div>
                             )
                         }
