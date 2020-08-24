@@ -124,6 +124,32 @@ export default class Navigation extends React.Component{
                         </div>
                         <span>Home</span>
                     </a>
+                    <RedirectConsumer>
+                        {context => {
+
+                            if (context.getAuth !== '') {
+                                return (
+                                    <a href="/logout" className="row middle-xs navBottom logout">
+                                        <div className="iconContainer">
+                                            <i className="ri-shut-down-line"></i>
+                                        </div>
+                                        <span>Logout</span>
+                                    </a>
+                                )
+                            }else{
+                               return (
+                                   <a href="/login" className="row middle-xs navBottom" style={{width:"85%"}}>
+                                       <div className="iconContainer">
+                                           <i className="ri-login-circle-line"></i>
+                                       </div>
+                                       <span>Login</span>
+
+                                   </a>
+                               )
+                            }
+                        }
+                        }
+                        </RedirectConsumer>
                 </nav>
             </div>
         )

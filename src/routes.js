@@ -4,11 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Redirect} from 'react-router-dom';
 import Login from './components/login';
 import Cookie from './secure/cookie';
-import Logout from './secure/logout';
-import Master from './components/template/landing';
 import {RedirectConsumer} from './context/login';
-
-const logout = new Logout();
 
 class Routes extends React.Component{
     constructor(){
@@ -63,7 +59,6 @@ class Routes extends React.Component{
                     </Route>
                     <Route path="/">
                         <div className="container">
-                            <Master/>
                         </div>
                     </Route>
                 </Switch>

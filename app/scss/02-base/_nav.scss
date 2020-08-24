@@ -1,6 +1,36 @@
 aside{
   .sideNavigation{
     padding:30px;
+    height:99vh;
+    position: relative;
+
+    .navBottom{
+      position: absolute;
+      bottom:0;
+    }
+
+    .logout{
+      width:85%;
+      .iconContainer{
+        background:$red;
+        color:$white;
+      }
+
+      span{
+        color:$red;
+      }
+
+      &:after{
+        content:'';
+        background:$red;
+      }
+
+      &:hover{
+        .iconContainer{
+          background:$orange;
+        }
+      }
+    }
 
     .profileBanner{
       height:150px;
