@@ -15,16 +15,14 @@ export default class Navigation extends React.Component{
             return (
                 <RedirectConsumer>
                     {context => {
-                        console.log(context);
                         const cookie = new Cookie();
                         if(context.getAuth === ''){
                             return <p>Please login to continue</p>
                         }else{
                             let banner = JSON.parse(context.getAuth);
                             banner = banner[0];
-                            // console.log(banner);
                             return (
-                                <div className="row">
+                                <div className="row middle-md">
                                     <div className="col-xs-12 col-md-5">
                                         <div className="profileImage"
                                              style={{backgroundImage: `url(images/users/${banner.image}`}}/>
@@ -126,7 +124,6 @@ export default class Navigation extends React.Component{
                     </a>
                     <RedirectConsumer>
                         {context => {
-
                             if (context.getAuth !== '') {
                                 return (
                                     <a href="/logout" className="row middle-xs navBottom logout">

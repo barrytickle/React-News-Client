@@ -6,6 +6,14 @@ import GetTimezone from "./secure/getTimezone";
 import Master from './components/template/master';
 
 class App extends React.Component {
+    componentDidMount() {
+        const script = document.createElement("script");
+        script.src='/js/main.js';
+        script.async=true;
+
+        document.body.appendChild(script);
+    }
+
     render(){
         return(
             <div className="row">
