@@ -19,7 +19,22 @@ export default class Master extends React.Component{
 
                                             auth = auth[0].fullname
 
-                                            return <span className="largeTitle">Hello, <span style={{opacity:"0.3", fontWeight:"500"}}>{auth}</span></span>
+                                            const d = new Date();
+                                            let time;
+                                            if(d.getHours() < 12){
+                                                time = {
+                                                    icon:'sun.svg',
+                                                    message: 'Morning'
+                                                }
+                                            }else{
+                                                time = {
+                                                    icon: 'evening.svg',
+                                                    message: 'evening'
+                                                }
+                                            }
+
+                                            // console.log(d.getHours());
+                                            return <span className="largeTitle"><img className= " weatherIcon" src={'/images/icons/weather/'+time.icon}/> Good {time.message}, <span style={{marginLeft:15}}> {auth}</span></span>
                                         }
                                     }
                                     }

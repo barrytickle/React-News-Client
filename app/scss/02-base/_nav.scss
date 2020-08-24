@@ -33,7 +33,7 @@ aside{
     }
     .profileBanner{
       height:150px;
-      margin-bottom:50px;
+      margin-bottom:120px;
 
       .profileImage{
           height:80px;
@@ -46,7 +46,6 @@ aside{
       }
       .username{
         font-size:24px;
-        //margin:0;
         margin-left:30px;
         color:$purple;
         font-weight:bold;
@@ -64,9 +63,9 @@ aside{
         @include display(inline-flex);
         @include justify-content(center);
         @include align-items(center);
-        height:50px;
-        width:50px;
-        border-radius: 10px;
+        height:55px;
+        width:55px;
+        border-radius: 20px;
         margin-right:20px;
         transition:0.2s ease-in-out;
         i{
@@ -74,7 +73,8 @@ aside{
         }
       }
       span{
-        font-weight:600;
+        font-weight:400;
+        opacity:.7;
         color:$black;
       }
 

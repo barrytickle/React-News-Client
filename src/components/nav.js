@@ -25,7 +25,6 @@ export default class Navigation extends React.Component{
                                 <div className="row middle-md">
                                         <div className="profileImage"
                                              style={{backgroundImage: `url(images/users/${banner.image}`}}/>
-                                        {/*<p>{banner.fullname}</p>*/}
                                         <p className="username">{banner.username}</p>
                                 </div>
                             )
@@ -69,13 +68,13 @@ export default class Navigation extends React.Component{
                         {BannerProfile}
                         <LocationDataConsumer>
                             {context => (
-                                <Clock style={{marginTop:"30px", display:"block", fontSize:"24px", fontWeight:"bold"}} format={'HH:mm'} ticking={true} timezone={context.tz}/>
+                                <Clock style={{marginTop:"30px", display:"block", fontSize:"24px" ,fontWeight:"400"}} format={'dddd Do MMMM'} ticking={true} timezone={context.tz}/>
 
                             )}
                         </LocationDataConsumer>
                         <LocationDataConsumer>
                             {context => (
-                                <Clock style={{display:"block", fontSize:"24px", opacity:"0.3",fontWeight:"bold", marginTop:"-10px"}} format={'dddd Do MMMM'} ticking={true} timezone={context.tz}/>
+                                <Clock style={{display:"block", opacity:"0.3", fontSize:"24px", fontWeight:"400", marginTop:0}} format={'HH:mm'} ticking={true} timezone={context.tz}/>
 
                             )}
                         </LocationDataConsumer>
@@ -121,7 +120,7 @@ export default class Navigation extends React.Component{
                         {context => {
                             if (context.getAuth !== '') {
                                 return (
-                                    <a href="/logout" className="row middle-xs navBottom logout">
+                                    <a href="/logout" className="row middle-xs logout">
                                         <div className="iconContainer">
                                             <i className="ri-shut-down-line"></i>
                                         </div>
@@ -130,12 +129,11 @@ export default class Navigation extends React.Component{
                                 )
                             }else{
                                return (
-                                   <a href="/login" className="row middle-xs navBottom" style={{width:"85%"}}>
+                                   <a href="/login" className="row middle-xs" style={{width:"85%"}}>
                                        <div className="iconContainer">
                                            <i className="ri-login-circle-line"></i>
                                        </div>
                                        <span>Login</span>
-
                                    </a>
                                )
                             }

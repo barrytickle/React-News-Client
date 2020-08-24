@@ -3,6 +3,7 @@
 *{
   box-sizing: border-box;
   font-family: $primaryFont;
+  font-weight:300;
 
 }
 
@@ -13,14 +14,23 @@ body,html{
 
 .siteContainer{
   margin: 0 auto;
-  max-width:90%;
-  @media #{$desktop}{
-    max-width:80%;
-
-  }
+  padding:35px;
 }
 
 .largeTitle{
-  font-size:32px;
-  font-weight:bold;
+  font-size:62px;
+  font-weight:200;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+
+  span{
+    font-weight:inherit;
+    opacity: 0.3;
+  }
+
+  .weatherIcon{
+    height:80px;
+    margin-right:30px;
+  }
 }
