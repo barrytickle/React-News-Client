@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import Gateway from '../secure/gateway';
 import Cookie from '../secure/cookie';
 import {RedirectConsumer} from "../context/login";
+import {config} from "../secure/config";
 
 
  class Login extends React.Component{
@@ -31,7 +32,7 @@ import {RedirectConsumer} from "../context/login";
         const postOptions = {
             method: 'POST'
         }
-        const url = 'http://localhost:9000/news/auth';
+        const url = `${config.GatewayUrl}/news/auth`;
         const params = `?username=${body.username}&password=${body.password}`;
         const data =  await gateway.send(url, params, postOptions);
         const cookie = new Cookie();

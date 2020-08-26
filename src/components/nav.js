@@ -24,7 +24,7 @@ export default class Navigation extends React.Component{
                             return (
                                 <div className="row middle-md">
                                         <div className="profileImage"
-                                             style={{backgroundImage: `url(images/users/${banner.image}`}}/>
+                                             style={{backgroundImage: `url(/images/users/${banner.image}`}}/>
                                         <p className="username">{banner.username}</p>
                                 </div>
                             )

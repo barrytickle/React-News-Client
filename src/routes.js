@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams
+} from "react-router-dom";
 import {Redirect} from 'react-router-dom';
 import Login from './components/login';
 import Cookie from './secure/cookie';
 import {RedirectConsumer} from './context/login';
+import FormComponent from './components/formComponent';
 
 class Routes extends React.Component{
     constructor(){
@@ -57,6 +64,7 @@ class Routes extends React.Component{
                             }}
                         </RedirectConsumer>
                     </Route>
+                    <Route path="/create/:param" children={<FormComponent/>}/>
                     <Route path="/">
                         <div className="container">
                         </div>

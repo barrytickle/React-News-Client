@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Gateway from "../secure/gateway";
+import {config} from '../secure/config';
 const {Provider, Consumer}  = React.createContext();
 
 class LocationDataProvider extends Component{
@@ -19,7 +20,7 @@ class LocationDataProvider extends Component{
     async getTimezone(lat, lon){
         // https://dev.virtualearth.net/REST/v1/timezone/61.768335,-158.808765?key={BingMapsAPIKey}
         const gateway = new Gateway();
-        const url = "http://localhost:9000/fetch";
+        const url = `${config.GatewayUrl}/fetch`;
         const params = "";
         const body = {
             method:"POST",

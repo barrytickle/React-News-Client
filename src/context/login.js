@@ -8,9 +8,6 @@ class RedirectProvider extends Component{
     constructor(props){
         super(props);
         const cookie = new Cookie();
-        // if()
-        console.log('Auth check');
-
         if(cookie.get('auth')){
             this.state = {
                 redirect: '/',
@@ -22,8 +19,6 @@ class RedirectProvider extends Component{
                 auth:''
             };
         }
-
-
     }
 
     setRedirect = (redirect) => {
